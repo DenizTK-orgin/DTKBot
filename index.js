@@ -35,8 +35,6 @@ client.once("ready", async () => {
     assets: {
       largeImage: "logo", // Discord Developer Portal'da yüklediğiniz resmin anahtarı
       largeText: "DenizTK Sunucusu",
-      smallImage: "gif", 
-      smallText: "DenizTK'nın Minik Botuyum"
     },
     buttons: [
       { label: "Sunucuma Katıl", url: "https://discord.gg/kXsNvc7R7S" },
