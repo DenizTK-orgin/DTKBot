@@ -30,19 +30,18 @@ client.once("ready", async () => {
   
   //activite
   client.user.setActivity({
-    status: "idle",
-    activities: [{ name: "DenizTK",
-                  type: ActivityType.Watching,
-                  buttons: [
-                   { label: "Siteme Git", url: "https://deniztk.com" },
-                   { label: "Discord", url: "https://discord.gg/kXsNvc7R7S" }
-                 ],
-                 assets: {
-                   largeImage: "logo", // Developer Portal'daki resim anahtarı
-                   largeText: "DenizTK Sunucusu", // Resmin üzerine gelindiğinde çıkan yazı
-                   smallImage: "gif",
-                   smallText: "En İyi Botum"
-                 } }],
+    name: "DenizTK",
+    type: ActivityType.Watching,
+    assets: {
+      largeImage: "logo", // Discord Developer Portal'da yüklediğiniz resmin anahtarı
+      largeText: "DenizTK Sunucusu",
+      smallImage: "gif", 
+      smallText: "DenizTK'nın Minik Botuyum"
+    },
+    buttons: [
+      { label: "Sunucuma Katıl", url: "https://discord.gg/kXsNvc7R7S" },
+      { label: "YouTube Kanalı", url: "https://www.youtube.com/@DenizTK" }
+    ]
   });
 
   const guildId = "1252197549675380827";
