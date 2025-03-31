@@ -29,7 +29,7 @@ client.once("ready", async () => {
 
   
   //activite
-  client.user.setPresence({
+  client.user.setActivity({
     status: "idle",
     activities: [{ name: "DenizTK",
                   type: ActivityType.Watching,
