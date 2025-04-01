@@ -148,6 +148,7 @@ client.on("messageCreate", (message) => {
 
 //başlatıcı.dtk
 client.login(process.env.TOKEN);
+DiscordRPC.login({ clientId }).catch(console.error);
 
 setInterval(
   () => {
