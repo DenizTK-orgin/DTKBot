@@ -134,8 +134,6 @@ client.on("interactionCreate", async (interaction) => {
 
 // Mesajlara yanıt vermesi gibi
 client.on("messageCreate", (message) => {
-  if (message.author.bot) return;
-
   if (message.content === "sa") {
     message.channel.send("as");
   }
