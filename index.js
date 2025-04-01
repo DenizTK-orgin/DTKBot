@@ -68,11 +68,7 @@ client.once("ready", async () => {
         .setDescription('Gönderilecek metin')
         .setRequired(true)
     ),
-  async execute(interaction) {
-    const metin = interaction.options.getString('metin');
-    await interaction.reply(metin); // Kullanıcıya cevap verir
-    await interaction.channel.send("Ekstra bir mesaj!"); // Kanalda mesaj gönderir
-  }
+  
 
       new SlashCommandBuilder()
         .setName("at")
@@ -90,11 +86,21 @@ client.once("ready", async () => {
   }
 });
 
+//324324
+
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isCommand()) return;
 
   const { commandName, options } = interaction;
 
+  if(commandName === "mesaj") {
+    async execute(interaction) {
+    const metin = interaction.options.getString('metin');
+    await interaction.reply(metin); // Kullanıcıya cevap verir
+    await interaction.channel.send("Ekstra bir mesaj!"); // Kanalda mesaj gönderir
+  }
+  }
+  
   if (commandName === "yasakla") {
     const member = options.getMember("kullanıcı");
     if (
