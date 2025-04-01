@@ -28,17 +28,21 @@ client.once("ready", async () => {
   console.log(`✅ ${client.user.tag} yaşıyor`);
 
   
-  //activite
+  client.user.setStatus("idle");
+
+  // Aktivite ve butonları ayarla
   client.user.setActivity({
     name: "DenizTK",
     type: ActivityType.Watching,
     assets: {
-      largeImage: "logo", // Discord Developer Portal'da yüklediğiniz resmin anahtarı
+      largeImage: "logo", // Developer Portal'daki resim anahtarı
       largeText: "DenizTK Sunucusu",
+      smallImage: "gif",
+      smallText: "En İyi Botum"
     },
     buttons: [
-      { label: "Sunucuma Katıl", url: "https://discord.gg/kXsNvc7R7S" },
-      { label: "YouTube Kanalı", url: "https://www.youtube.com/@DenizTK" }
+      { label: "Siteme Git", url: "https://www.youtube.com/@DenizTK" },
+      { label: "Discord", url: "https://discord.gg/kXsNvc7R7S" }
     ]
   });
 
