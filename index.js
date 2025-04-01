@@ -31,14 +31,14 @@ client.once("ready", async () => {
   
   client.user.setStatus("idle");
 
-  client.user.setActivity('DenizTK izliyor', {
-        type: 'WATCHING',  // İzleme, oynama, dinleme gibi aktiviteler
+  client.user.setActivity('DenizTKyı izliyor', {
+        type: 'WATCHING',  // Aktivite türü
         details: 'DTKland',  // Küçük başlık
-        state: 'En iyi Botum',  // Büyük başlık
-        largeImageKey: 'logo', // Discord Developer Portal'daki varlık adı
+        state: 'Hell yah',  // Büyük başlık
+        largeImageKey: 'logo', // Discord Developer Portal'dan yüklediğiniz büyük resmin anahtarı
         largeImageText: 'DenizTK Sunucusu',  // Büyük resmin altındaki metin
-        smallImageKey: 'gif',  // Küçük resim (isteğe bağlı)
-        smallImageText: 'Level 100',  // Küçük resmin altındaki metin (isteğe bağlı)
+        smallImageKey: 'gif',  // Discord Developer Portal'dan yüklediğiniz küçük resmin anahtarı
+        smallImageText: 'Level 100',  // Küçük resmin altındaki metin
         buttons: [
             { label: 'Siteme Git', url: 'https://www.youtube.com/@DenizTK' },
             { label: 'Discord', url: 'https://discord.gg/kXsNvc7R7S' }
