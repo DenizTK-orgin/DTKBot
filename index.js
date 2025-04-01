@@ -29,7 +29,6 @@ client.once("ready", async () => {
   console.log(`✅ ${client.user.tag} yaşıyor`);
 
   
-  client.user.setStatus("idle");
 
   client.user.setActivity('DenizTKyı izliyor', {
         type: 'watching',  // Aktivite türü
