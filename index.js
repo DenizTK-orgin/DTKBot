@@ -61,6 +61,20 @@ client.once("ready", async () => {
         ),
 
       new SlashCommandBuilder()
+    .setName('mesaj')
+    .setDescription('Bot mesaj gönderir.')
+    .addStringOption(option =>
+      option.setName('metin')
+        .setDescription('Gönderilecek metin')
+        .setRequired(true)
+    ),
+  async execute(interaction) {
+    const metin = interaction.options.getString('metin');
+    await interaction.reply(metin); // Kullanıcıya cevap verir
+    await interaction.channel.send("Ekstra bir mesaj!"); // Kanalda mesaj gönderir
+  }
+
+      new SlashCommandBuilder()
         .setName("at")
         .setDescription("Bir kullanıcıyı sunucudan atar")
         .addUserOption((option) =>
