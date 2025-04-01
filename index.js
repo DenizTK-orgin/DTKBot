@@ -32,7 +32,7 @@ client.once("ready", async () => {
   client.user.setStatus("idle");
 
   client.user.setActivity('DenizTKyı izliyor', {
-        type: 'WATCHING',  // Aktivite türü
+        type: 'watching',  // Aktivite türü
         details: 'DTKland',  // Küçük başlık
         state: 'Hell yah',  // Büyük başlık
         largeImageKey: 'logo', // Discord Developer Portal'dan yüklediğiniz büyük resmin anahtarı
