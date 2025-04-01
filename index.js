@@ -29,7 +29,7 @@ client.once("ready", async () => {
   console.log(`✅ ${client.user.tag} yaşıyor`);
 
   
-  client.user.setStatus("idle");
+  client.user.setStatus("dhd");
 
   // Aktivite ve butonları ayarla
   client.user.setActivity({
@@ -76,24 +76,6 @@ client.once("ready", async () => {
 
     await client.application.commands.set(commands);
     console.log("Slash komutları yapılandırıldı ow yeeeee");
-  }
-});
-
-client.on('messageCreate', async (message) => {
-  if (message.author.bot) return;
-
-  const xp = db.get(`xp_${message.guild.id}_${message.author.id}`) || 0;
-  const level = Math.floor(xp / 100);
-
-  // Level 10'a ulaşanlara rozet ver
-  if (level >= 10) {
-    const badge = await Badge.findOne({ userID: message.author.id, guildID: message.guild.id });
-    if (!badge.badges.some(b => b.name === 'Geliştirici')) {
-      badge.badges.push({ name: 'Geliştirici', earnedAt: new Date() });
-      await badge.save();
-      message.member.roles.add('ROZET_ROL_ID');
-      message.channel.send(`🎉 ${message.author}, **Geliştirici Rozeti** kazandın!`);
-    }
   }
 });
 
