@@ -11,6 +11,11 @@ const express = require("express");
 
 require("dotenv").config();
 
+const RPC = require("discord-rpc");
+const clientId = "1178271681177997342";
+DiscordRPC = new RPC.Client({ transport: "ipc" });
+
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -29,24 +34,21 @@ client.once("ready", async () => {
   console.log(`✅ ${client.user.tag} yaşıyor`);
 
   
-  client.user.setStatus("dhd");
+  client.user.setStatus("idle");
 
-  // Aktivite ve butonları ayarla
-  client.user.setActivity({
-    name: "DenizTK",
-    type: ActivityType.Watching,
-    assets: {
-      largeImage: "logo", // Developer Portal'daki resim anahtarı
-      largeText: "DenizTK Sunucusu",
-      smallImage: "gif",
-      smallText: "En İyi Botum"
-    },
+  DiscordRPC.setActivity({
+    details: "DenizTK izliyor",  // Küçük başlık
+    state: "DTKland",  // Büyük başlık
+    largeImageKey: "logo", // Discord Developer Portal'daki Asset adı
+    largeImageText: "DenizTK Sunucusu",
+    smallImageKey: "gif", // Küçük resim (isteğe bağlı)
+    smallImageText: "En İyi Botum",
     buttons: [
       { label: "Siteme Git", url: "https://www.youtube.com/@DenizTK" },
-      { label: "Discord", url: "https://discord.gg/kXsNvc7R7S" }
-    ]
+      { label: "Discord", url: "https://discord.gg/kXsNvc7R7S" },
+    ],
   });
-
+  
   const guildId = "1252197549675380827";
   const guild = client.guilds.cache.get(guildId);
   //const guild = await client.guilds.fetch(guildId);
@@ -140,11 +142,6 @@ client.on("messageCreate", (message) => {
   if (message.author.bot) return;
 
   if (message.content === "sa") {
-    const embed = new EmbedBuilder()
-      .setTitle("Başlık")
-      .setDescription("As")
-      .setColor("#ffffff"); // renk
-
     message.channel.send("as");
   }
 });
