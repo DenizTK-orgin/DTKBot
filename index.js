@@ -30,7 +30,7 @@ client.once("ready", async () => {
 
   
 
-  client.user.setActivity('DenizTKyı izliyor', {
+  client.user.setActivity( {
         type: 'watching',  // Aktivite türü
         details: 'DTKland',  // Küçük başlık
         state: 'Hell yah',  // Büyük başlık
